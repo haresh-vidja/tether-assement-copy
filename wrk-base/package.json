@@ -1,0 +1,19 @@
+{
+  "name": "wrk-base",
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "async": "3.2.6",
+    "bfx-svc-boot-js": "git+https://github.com/bitfinexcom/bfx-svc-boot-js.git",
+    "bfx-wrk-base": "git+https://github.com/bitfinexcom/bfx-wrk-base.git",
+    "hp-svc-facs-net": "git+https://github.com/tetherto/hp-svc-facs-net.git",
+    "hp-svc-facs-store": "git+https://github.com/tetherto/hp-svc-facs-store.git",
+    "pino": "9.5.0"
+  },
+  "devDependencies": {
+    "standard": "17.1.0"
+  }
+}
