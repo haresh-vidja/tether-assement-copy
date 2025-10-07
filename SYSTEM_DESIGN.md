@@ -126,6 +126,44 @@ The Tether AI Platform is a microservice-based architecture designed to provide 
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
+## User Flow Diagrams
+
+### Inference Request Flow
+```mermaid
+sequenceDiagram
+participant Client
+participant API Gateway
+participant Orchestrator
+participant AI Worker
+participant Model Manager
+Client->>API Gateway: HTTP POST /inference
+API Gateway->>Orchestrator: RPC findAvailableWorker(modelId)
+Orchestrator->>AI Worker: RPC checkCapacity(modelId)
+AI Worker-->>Orchestrator: capacity status
+Orchestrator-->>API Gateway: worker address + publicKey
+API Gateway->>AI Worker: RPC runInference(modelId, inputData)
+AI Worker->>Model Manager: RPC getModel(modelId)
+Model Manager-->>AI Worker: model data
+AI Worker-->>API Gateway: inference result
+API Gateway-->>Client: HTTP 200 + result
+```  
+### Service Registration Flow
+```mermaid
+sequenceDiagram
+participant AI Worker
+participant DHT
+participant Orchestrator
+AI Worker->>DHT: announce capability + publicKey
+Orchestrator->>DHT: discover AI workers
+DHT-->>Orchestrator: worker addresses
+Orchestrator->>AI Worker: RPC registerWorker()
+AI Worker-->>Orchestrator: registration confirmation
+loop Health Check
+Orchestrator->>AI Worker: RPC ping()
+AI Worker-->>Orchestrator: pong + status
+end
+```
+
 ## Service Discovery and Communication
 
 ### Hyperswarm RPC Communication
