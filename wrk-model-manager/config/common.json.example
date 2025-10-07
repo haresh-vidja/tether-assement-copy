@@ -1,0 +1,10 @@
+{
+  "debug": false,
+  "storagePath": "./models",
+  "maxModelSize": "1GB",
+  "replicationFactor": 3,
+  "modelValidationEnabled": true,
+  "supportedFormats": ["onnx", "pytorch", "tensorflow"],
+  "compressionEnabled": true,
+  "checksumValidation": true
+}

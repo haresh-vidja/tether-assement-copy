@@ -1,0 +1,10 @@
+{
+  "debug": false,
+  "maxConcurrentInferences": 10,
+  "modelCacheSize": 5,
+  "inferenceTimeout": 30000,
+  "healthCheckInterval": 10000,
+  "supportedModelTypes": ["onnx", "pytorch"],
+  "gpuEnabled": false,
+  "memoryLimit": "2GB"
+}

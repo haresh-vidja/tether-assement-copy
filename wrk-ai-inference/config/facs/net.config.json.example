@@ -1,0 +1,7 @@
+{
+  "port": 8001,
+  "host": "0.0.0.0",
+  "timeout": 30000,
+  "maxConnections": 100,
+  "keepAlive": true
+}

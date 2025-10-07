@@ -1,0 +1,22 @@
+{
+  "debug": false,
+  "port": 3000,
+  "host": "0.0.0.0",
+  "rateLimit": {
+    "enabled": true,
+    "maxRequests": 100,
+    "windowMs": 60000
+  },
+  "authentication": {
+    "enabled": true,
+    "apiKeyRequired": true
+  },
+  "orchestrator": {
+    "address": "localhost:8003",
+    "timeout": 30000
+  },
+  "cors": {
+    "enabled": true,
+    "origins": ["*"]
+  }
+}

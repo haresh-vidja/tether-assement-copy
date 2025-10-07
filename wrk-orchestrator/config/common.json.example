@@ -1,0 +1,11 @@
+{
+  "debug": false,
+  "healthCheckInterval": 5000,
+  "workerTimeout": 30000,
+  "maxRetries": 3,
+  "loadBalancingStrategy": "round-robin",
+  "enableFailover": true,
+  "serviceDiscoveryInterval": 10000,
+  "maxWorkersPerModel": 5,
+  "requestTimeout": 60000
+}

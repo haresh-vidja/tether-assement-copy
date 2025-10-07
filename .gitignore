@@ -80,7 +80,12 @@ tmp/
 models/
 
 # Global configuration files (service-specific configs handled by individual .gitignore)
-config/
+config/*.json
+!config/*.example
+!config/*.json.example
+config/facs/*.json
+!config/facs/*.example
+!config/facs/*.json.example
 
 # =============================================================================
 # DEVELOPMENT & BUILD TOOLS

@@ -86,7 +86,7 @@ logs/
 # CONFIGURATION FILES
 # =============================================================================
 
-# Actual configuration files (keep examples)
+# Configuration files (keep examples and directory structure)
 config/common.json
 config/facs/*.json
 !config/*.example
