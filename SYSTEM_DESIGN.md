@@ -9,32 +9,12 @@ The Tether AI Platform is a microservice-based architecture designed to provide 
 ### Core Services
 
 1. **API Gateway (wrk-api-gateway)**
-   - Port: 8000
-   - Handles HTTP requests from external clients
-   - Converts HTTP requests to Hyperswarm RPC calls
-   - Implements authentication and rate limiting
-   - Routes requests to the orchestrator
 
 2. **Orchestrator (wrk-orchestrator)**
-   - Port: 8002
-   - Service discovery and load balancing
-   - Health monitoring and failover management
-   - Request routing to available AI workers
-   - Maintains service registry
 
 3. **AI Inference Worker (wrk-ai-inference)**
-   - Ports: 8001, 8003, 800N (scalable)
-   - Executes AI model inference locally
-   - Model loading and caching
-   - Batch processing capabilities
-   - Performance monitoring
 
 4. **Model Manager (wrk-model-manager)**
-   - Port: 8004
-   - Model storage and distribution
-   - Versioning and updates
-   - Replication management
-   - Metadata management
 
 ## System Architecture Diagram
 
@@ -45,9 +25,6 @@ The Tether AI Platform is a microservice-based architecture designed to provide 
 │  │   Web Client    │    │  Mobile App     │    │   API Client     │            │
 │  └─────────────────┘    └─────────────────┘    └─────────────────┘            │
 └─────────────────────────────────────────────────────────────────────────────────┘
-                                            │
-                                      HTTP REST API
-                                            │
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                                API LAYER                                       │
 │                    ┌─────────────────────────────────┐                        │
@@ -59,9 +36,6 @@ The Tether AI Platform is a microservice-based architecture designed to provide 
 │                    │  • Request Routing              │                        │
 │                    └─────────────────────────────────┘                        │
 └─────────────────────────────────────────────────────────────────────────────────┘
-                                            │
-                                    Hyperswarm RPC
-                                            │
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                            ORCHESTRATION LAYER                                 │
 │                    ┌─────────────────────────────────┐                        │
@@ -74,9 +48,6 @@ The Tether AI Platform is a microservice-based architecture designed to provide 
 │                    │  • Failover Management          │                        │
 │                    └─────────────────────────────────┘                        │
 └─────────────────────────────────────────────────────────────────────────────────┘
-                                            │
-                                    Service Discovery & Load Balancing
-                                            │
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                            AI PROCESSING LAYER                                 │
 │  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐            │
@@ -88,9 +59,6 @@ The Tether AI Platform is a microservice-based architecture designed to provide 
 │  │ • Caching       │    │ • Caching       │    │ • Caching       │            │
 │  └─────────────────┘    └─────────────────┘    └─────────────────┘            │
 └─────────────────────────────────────────────────────────────────────────────────┘
-                                            │
-                                      Model Requests
-                                            │
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                              STORAGE LAYER                                     │
 │                    ┌─────────────────────────────────┐                        │
@@ -110,9 +78,6 @@ The Tether AI Platform is a microservice-based architecture designed to provide 
 │            │(Model Files)│ │(Metadata)   │ │(Active Data)│                   │
 │            └─────────────┘ └─────────────┘ └─────────────┘                   │
 └─────────────────────────────────────────────────────────────────────────────────┘
-                                            │
-                                    Service Discovery
-                                            │
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                              NETWORK LAYER                                     │
 │                    ┌─────────────────────────────────┐                        │
