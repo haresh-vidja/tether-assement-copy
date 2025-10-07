@@ -1,0 +1,243 @@
+# API Gateway Service - .gitignore
+# Service-specific ignore patterns for HTTP API gateway and authentication
+
+# =============================================================================
+# API GATEWAY SPECIFIC DATA
+# =============================================================================
+
+# Request/response logs
+api_logs/
+request_logs/
+response_logs/
+access_logs/
+
+# API rate limiting data
+rate_limit_data/
+throttle_data/
+quota_data/
+
+# Session management
+sessions/
+session_data/
+user_sessions/
+
+# API key management
+api_keys/
+key_storage/
+key_cache/
+
+# =============================================================================
+# HTTP SERVER ARTIFACTS
+# =============================================================================
+
+# HTTP server logs
+http_logs/
+server_logs/
+nginx_logs/
+apache_logs/
+
+# SSL/TLS certificates
+ssl/
+tls/
+certificates/
+*.crt
+*.pem
+*.key
+*.p12
+*.pfx
+
+# HTTP cache
+http_cache/
+response_cache/
+static_cache/
+
+# =============================================================================
+# AUTHENTICATION & AUTHORIZATION
+# =============================================================================
+
+# Auth tokens and sessions
+tokens/
+auth_tokens/
+jwt_tokens/
+refresh_tokens/
+
+# User data
+users/
+user_data/
+profiles/
+accounts/
+
+# Permission data
+permissions/
+roles/
+access_control/
+
+# =============================================================================
+# SERVICE-SPECIFIC DATA
+# =============================================================================
+
+# Runtime data directories
+data/
+temp/
+tmp/
+storage/
+
+# Service logs
+logs/
+*.log
+*.log.*
+
+# PID files
+*.pid
+
+# =============================================================================
+# CONFIGURATION FILES
+# =============================================================================
+
+# Actual configuration files (keep examples)
+config/common.json
+config/facs/*.json
+!config/*.example
+!config/facs/*.example
+
+# Environment-specific configs
+config/*.local.json
+config/*.dev.json
+config/*.prod.json
+config/*.test.json
+
+# =============================================================================
+# API DOCUMENTATION & TESTING
+# =============================================================================
+
+# Generated API docs
+api_docs/
+swagger/
+openapi/
+documentation/
+
+# API testing data
+test_requests/
+test_responses/
+api_tests/
+integration_tests/
+
+# Postman collections
+postman/
+collections/
+environments/
+
+# =============================================================================
+# DEVELOPMENT & TESTING
+# =============================================================================
+
+# Test API data
+test_data/
+mock_requests/
+mock_responses/
+sample_requests/
+
+# Development artifacts
+dev/
+development/
+scratch/
+experimental/
+debug/
+
+# Load testing data
+load_test_data/
+stress_test_data/
+performance_test_data/
+
+# =============================================================================
+# HYPERCORE/HYPERBEE STORAGE
+# =============================================================================
+
+# Hypercore storage directories
+.hypercore/
+.hyperbee/
+.hyperswarm/
+.peers/
+.dht/
+
+# API gateway storage
+gateway_storage/
+api_storage/
+request_storage/
+
+# =============================================================================
+# SECURITY & SENSITIVE DATA
+# =============================================================================
+
+# Secrets and credentials
+secrets/
+credentials/
+passwords/
+private_keys/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# =============================================================================
+# MONITORING & OBSERVABILITY
+# =============================================================================
+
+# API metrics
+api_metrics/
+request_metrics/
+response_metrics/
+*.metrics
+
+# Monitoring data
+monitoring/
+observability/
+health_checks/
+
+# APM traces
+traces/
+*.trace
+
+# =============================================================================
+# BACKUP & ARCHIVE
+# =============================================================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+*.temp
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# =============================================================================
+# MISC
+# =============================================================================
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.lock

@@ -1,0 +1,216 @@
+# AI Inference Worker Service - .gitignore
+# Service-specific ignore patterns for AI model inference and execution
+
+# =============================================================================
+# AI MODEL CACHE & RUNTIME
+# =============================================================================
+
+# Model cache files (loaded models in memory)
+model_cache/
+cache/
+*.cache
+models/*.cache
+inference_cache/
+
+# Model runtime data
+runtime/
+model_runtime/
+inference_runtime/
+
+# Model loading artifacts
+loaded_models/
+active_models/
+memory_models/
+
+# =============================================================================
+# INFERENCE DATA & RESULTS
+# =============================================================================
+
+# Inference input/output data
+inference_data/
+input_data/
+output_data/
+results/
+predictions/
+
+# Temporary inference files
+temp_inference/
+inference_temp/
+*.inference.tmp
+
+# Batch processing data
+batch_data/
+batch_results/
+batch_cache/
+
+# =============================================================================
+# SERVICE-SPECIFIC DATA
+# =============================================================================
+
+# Runtime data directories
+data/
+temp/
+tmp/
+storage/
+
+# Service logs
+logs/
+*.log
+*.log.*
+
+# PID files
+*.pid
+
+# Performance metrics
+performance/
+metrics/
+benchmarks/
+*.metrics
+
+# =============================================================================
+# CONFIGURATION FILES
+# =============================================================================
+
+# Actual configuration files (keep examples)
+config/common.json
+config/facs/*.json
+!config/*.example
+!config/facs/*.example
+
+# Environment-specific configs
+config/*.local.json
+config/*.dev.json
+config/*.prod.json
+config/*.test.json
+
+# =============================================================================
+# MODEL PROCESSING ARTIFACTS
+# =============================================================================
+
+# Preprocessed input data
+preprocessed/
+processed/
+transformed/
+normalized/
+
+# Model validation results
+validation/
+validation_results/
+test_results/
+
+# Inference statistics
+stats/
+statistics/
+inference_stats/
+
+# =============================================================================
+# DEVELOPMENT & TESTING
+# =============================================================================
+
+# Test inference data
+test_data/
+test_inputs/
+test_outputs/
+sample_data/
+
+# Development artifacts
+dev/
+development/
+scratch/
+experimental/
+debug/
+
+# Mock data for testing
+mock_data/
+fake_data/
+dummy_data/
+
+# =============================================================================
+# HYPERCORE/HYPERBEE STORAGE
+# =============================================================================
+
+# Hypercore storage directories
+.hypercore/
+.hyperbee/
+.hyperswarm/
+.peers/
+.dht/
+
+# Local storage indexes
+storage_index/
+inference_index/
+model_index/
+
+# =============================================================================
+# SECURITY & SENSITIVE DATA
+# =============================================================================
+
+# API keys and secrets
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# =============================================================================
+# MONITORING & OBSERVABILITY
+# =============================================================================
+
+# APM traces
+traces/
+*.trace
+
+# Monitoring data
+monitoring/
+observability/
+health_checks/
+
+# =============================================================================
+# BACKUP & ARCHIVE
+# =============================================================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+*.temp
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# =============================================================================
+# MISC
+# =============================================================================
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.lock

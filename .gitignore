@@ -1,0 +1,246 @@
+# Tether AI Platform - Root .gitignore
+# Project-wide ignore patterns (excluding service-specific patterns)
+
+# =============================================================================
+# NODE.JS & NPM (PROJECT-WIDE)
+# =============================================================================
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage
+.grunt
+
+# Bower dependency directory
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons
+build/Release
+
+# Dependency directories
+jspm_packages/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# =============================================================================
+# PROJECT-WIDE PATTERNS
+# =============================================================================
+
+# Global logs directory (service-specific logs handled by individual .gitignore)
+logs/
+
+# Global runtime data (service-specific data handled by individual .gitignore)
+data/
+temp/
+tmp/
+
+# Global model storage (service-specific models handled by wrk-model-manager/.gitignore)
+models/
+
+# Global configuration files (service-specific configs handled by individual .gitignore)
+config/
+
+# =============================================================================
+# DEVELOPMENT & BUILD TOOLS
+# =============================================================================
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# =============================================================================
+# TESTING & DEBUGGING
+# =============================================================================
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Debug logs
+debug.log
+error.log
+
+# Test results
+test-results/
+junit.xml
+
+# =============================================================================
+# SECURITY & SENSITIVE DATA
+# =============================================================================
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Global secrets (service-specific secrets handled by individual .gitignore)
+secrets/
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# =============================================================================
+# DOCKER & CONTAINERIZATION
+# =============================================================================
+
+# Docker
+Dockerfile.local
+docker-compose.override.yml
+.dockerignore
+
+# =============================================================================
+# MONITORING & OBSERVABILITY
+# =============================================================================
+
+# Global metrics and monitoring data
+metrics/
+monitoring/
+*.metrics
+
+# APM traces
+traces/
+*.trace
+
+# =============================================================================
+# BACKUP & ARCHIVE FILES
+# =============================================================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# =============================================================================
+# HYPERCORE & HYPERBEE SPECIFIC
+# =============================================================================
+
+# Hypercore storage
+.hypercore/
+.hyperbee/
+.hyperswarm/
+
+# Peer-to-peer data
+.peers/
+.dht/
+
+# =============================================================================
+# DOCUMENTATION BUILD
+# =============================================================================
+
+# Generated documentation
+docs/build/
+docs/dist/
+
+# =============================================================================
+# CACHE DIRECTORIES
+# =============================================================================
+
+# Various cache directories
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist/
+
+# =============================================================================
+# MISC
+# =============================================================================
+
+# Temporary files
+*.tmp
+*.temp
+
+# Lock files (keep package-lock.json, ignore others)
+yarn.lock
+pnpm-lock.yaml
+
+# Local development
+.local/
+local/
+
+# Performance monitoring
+*.cpuprofile
+*.heapprofile
+*.heapsnapshot
+
+# =============================================================================
+# SERVICE-SPECIFIC PATTERNS (DELEGATED TO INDIVIDUAL .GITIGNORE FILES)
+# =============================================================================
+
+# Note: The following patterns are handled by service-specific .gitignore files:
+# - wrk-ai-inference/.gitignore: model_cache/, inference_cache/, inference_data/
+# - wrk-api-gateway/.gitignore: api_logs/, tokens/, auth_tokens/, ssl/
+# - wrk-model-manager/.gitignore: models/*.bin, models/*.onnx, model_storage/
+# - wrk-orchestrator/.gitignore: service_registry/, load_balancer_data/, health_data/
+# - Service-specific config files: config/common.json, config/facs/*.json
+# - Service-specific runtime data: wrk-*/data/, wrk-*/temp/, wrk-*/logs/

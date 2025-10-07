@@ -1,0 +1,19 @@
+{
+  "name": "wrk-ai-inference",
+  "version": "1.0.0",
+  "description": "AI Inference Worker for Tether Platform",
+  "main": "worker.js",
+  "scripts": {
+    "start": "node worker.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "pino": "^8.0.0",
+    "async": "^3.2.0",
+    "express": "^4.18.0",
+    "cors": "^2.8.5"
+  },
+  "keywords": ["ai", "inference", "microservice", "hyperswarm"],
+  "author": "Tether Data",
+  "license": "MIT"
+}

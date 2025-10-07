@@ -1,0 +1,252 @@
+# Model Manager Service - .gitignore
+# Service-specific ignore patterns for AI model storage and management
+
+# =============================================================================
+# AI MODEL FILES
+# =============================================================================
+
+# Model binary files (large files - should not be tracked)
+models/*.bin
+models/*.onnx
+models/*.pt
+models/*.pth
+models/*.pkl
+models/*.h5
+models/*.pb
+models/*.tflite
+models/*.weights
+models/*.model
+models/*.ckpt
+models/*.safetensors
+models/*.pytorch
+models/*.tensorflow
+models/*.keras
+models/*.hdf5
+models/*.pb
+models/*.tflite
+models/*.lite
+models/*.mlmodel
+models/*.coreml
+models/*.mlpackage
+
+# Model archives and compressed files
+models/*.zip
+models/*.tar.gz
+models/*.tar.bz2
+models/*.rar
+models/*.7z
+models/*.gz
+
+# Model checkpoints and training artifacts
+models/checkpoints/
+models/training/
+models/backup/
+models/versions/
+models/cache/
+
+# =============================================================================
+# MODEL METADATA (KEEP THESE)
+# =============================================================================
+
+# Keep model metadata files (these should be tracked)
+!models/*.json
+!models/*.txt
+!models/*.md
+!models/*.yaml
+!models/*.yml
+!models/*.toml
+!models/*.ini
+!models/*.cfg
+!models/*.config
+
+# Keep model documentation
+!models/README.md
+!models/DOCS/
+!models/docs/
+
+# =============================================================================
+# MODEL STORAGE & MANAGEMENT
+# =============================================================================
+
+# Model storage directories
+model_storage/
+storage/
+model_repository/
+model_registry/
+
+# Model replication data
+replication/
+replicated_models/
+sync_data/
+
+# Model versioning
+versions/
+version_history/
+model_history/
+
+# =============================================================================
+# SERVICE-SPECIFIC DATA
+# =============================================================================
+
+# Runtime data directories
+data/
+temp/
+tmp/
+cache/
+
+# Service logs
+logs/
+*.log
+*.log.*
+
+# PID files
+*.pid
+
+# =============================================================================
+# CONFIGURATION FILES
+# =============================================================================
+
+# Actual configuration files (keep examples)
+config/common.json
+config/facs/*.json
+!config/*.example
+!config/facs/*.example
+
+# Environment-specific configs
+config/*.local.json
+config/*.dev.json
+config/*.prod.json
+config/*.test.json
+
+# =============================================================================
+# MODEL PROCESSING ARTIFACTS
+# =============================================================================
+
+# Model validation results
+validation/
+validation_results/
+test_results/
+model_tests/
+
+# Model performance metrics
+metrics/
+performance/
+benchmarks/
+model_metrics/
+
+# Model preprocessing
+preprocessed/
+processed/
+transformed/
+normalized/
+
+# =============================================================================
+# HYPERCORE/HYPERBEE STORAGE
+# =============================================================================
+
+# Hypercore storage directories
+.hypercore/
+.hyperbee/
+.hyperswarm/
+.peers/
+.dht/
+
+# Storage indexes
+storage_index/
+model_index/
+metadata_index/
+
+# =============================================================================
+# DEVELOPMENT & TESTING
+# =============================================================================
+
+# Test model files
+test_models/
+test_data/
+sample_models/
+demo_models/
+
+# Development artifacts
+dev/
+development/
+scratch/
+experimental/
+
+# Model testing data
+model_tests/
+test_datasets/
+validation_datasets/
+
+# =============================================================================
+# SECURITY & SENSITIVE DATA
+# =============================================================================
+
+# API keys and secrets
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# =============================================================================
+# MONITORING & OBSERVABILITY
+# =============================================================================
+
+# Metrics and monitoring
+*.metrics
+monitoring/
+observability/
+
+# APM traces
+traces/
+*.trace
+
+# =============================================================================
+# BACKUP & ARCHIVE
+# =============================================================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+*.temp
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# =============================================================================
+# MISC
+# =============================================================================
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.lock

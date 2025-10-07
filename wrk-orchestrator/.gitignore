@@ -1,0 +1,238 @@
+# Orchestrator Service - .gitignore
+# Service-specific ignore patterns for service orchestration and load balancing
+
+# =============================================================================
+# ORCHESTRATION DATA
+# =============================================================================
+
+# Service registry data
+service_registry/
+registry_data/
+registered_services/
+service_discovery/
+
+# Load balancing data
+load_balancer_data/
+balancing_data/
+routing_data/
+distribution_data/
+
+# Health monitoring data
+health_data/
+health_checks/
+monitoring_data/
+service_health/
+
+# =============================================================================
+# SERVICE DISCOVERY & MANAGEMENT
+# =============================================================================
+
+# Service discovery cache
+discovery_cache/
+service_cache/
+peer_cache/
+dht_cache/
+
+# Service topology data
+topology/
+service_topology/
+network_topology/
+service_graph/
+
+# Service communication logs
+communication_logs/
+rpc_logs/
+service_logs/
+
+# =============================================================================
+# LOAD BALANCING ARTIFACTS
+# =============================================================================
+
+# Load balancing algorithms data
+lb_algorithms/
+balancing_algorithms/
+routing_algorithms/
+
+# Service capacity data
+capacity_data/
+resource_data/
+performance_data/
+utilization_data/
+
+# Request distribution data
+distribution_logs/
+routing_logs/
+allocation_logs/
+
+# =============================================================================
+# SERVICE-SPECIFIC DATA
+# =============================================================================
+
+# Runtime data directories
+data/
+temp/
+tmp/
+storage/
+
+# Service logs
+logs/
+*.log
+*.log.*
+
+# PID files
+*.pid
+
+# =============================================================================
+# CONFIGURATION FILES
+# =============================================================================
+
+# Actual configuration files (keep examples)
+config/common.json
+config/facs/*.json
+!config/*.example
+!config/facs/*.example
+
+# Environment-specific configs
+config/*.local.json
+config/*.dev.json
+config/*.prod.json
+config/*.test.json
+
+# =============================================================================
+# MONITORING & OBSERVABILITY
+# =============================================================================
+
+# Service monitoring
+service_monitoring/
+health_monitoring/
+performance_monitoring/
+resource_monitoring/
+
+# Metrics and statistics
+metrics/
+statistics/
+performance_metrics/
+*.metrics
+
+# APM traces
+traces/
+*.trace
+
+# Monitoring dashboards
+dashboards/
+monitoring_dashboards/
+observability_dashboards/
+
+# =============================================================================
+# DEVELOPMENT & TESTING
+# =============================================================================
+
+# Test orchestration data
+test_services/
+test_topology/
+test_scenarios/
+orchestration_tests/
+
+# Development artifacts
+dev/
+development/
+scratch/
+experimental/
+debug/
+
+# Mock services for testing
+mock_services/
+fake_services/
+test_workers/
+
+# =============================================================================
+# HYPERCORE/HYPERBEE STORAGE
+# =============================================================================
+
+# Hypercore storage directories
+.hypercore/
+.hyperbee/
+.hyperswarm/
+.peers/
+.dht/
+
+# Orchestrator storage
+orchestrator_storage/
+coordination_storage/
+management_storage/
+
+# =============================================================================
+# SECURITY & SENSITIVE DATA
+# =============================================================================
+
+# API keys and secrets
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# =============================================================================
+# FAILOVER & RECOVERY
+# =============================================================================
+
+# Failover data
+failover_data/
+recovery_data/
+backup_services/
+standby_services/
+
+# Service state snapshots
+state_snapshots/
+service_states/
+recovery_states/
+
+# =============================================================================
+# BACKUP & ARCHIVE
+# =============================================================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+*.temp
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# =============================================================================
+# MISC
+# =============================================================================
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.lock
