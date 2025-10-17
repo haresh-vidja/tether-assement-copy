@@ -1,5 +1,3 @@
-Here’s your content rewritten in clean, professional **Markdown** format without emojis:
-
 # Wrk-AI-Inference Overview
 
 ## Role in Stack
