@@ -15,15 +15,15 @@ During boot, it constructs:
 
 **References:**
 
-* `wrk-api-gateway/worker.js:12`
-* `wrk-api-gateway/config/common.json:2`
+* [`wrk-api-gateway/worker.js:12`](worker.js#L12)
+* [`wrk-api-gateway/config/common.json:2`](config/common.json#L2)
 
 Startup initializes all dependencies, launches the **Express server**, and begins periodic cleanup of throttling state to keep the gateway responsive over time.
 **References:**
 
-* `wrk-api-gateway/worker.js:26`
-* `wrk-api-gateway/worker.js:74`
-* `wrk-api-gateway/worker.js:146`
+* [`wrk-api-gateway/worker.js:26`](worker.js#L26)
+* [`wrk-api-gateway/worker.js:74`](worker.js#L74)
+* [`wrk-api-gateway/worker.js:146`](worker.js#L146)
 
 ---
 
@@ -45,17 +45,17 @@ The gateway exposes endpoints for:
 
 **References:**
 
-* `wrk-api-gateway/worker.js:43`
-* `wrk-api-gateway/worker.js:83`
-* `wrk-api-gateway/worker.js:94`
-* `wrk-api-gateway/worker.js:127`
+* [`wrk-api-gateway/worker.js:43`](worker.js#L43)
+* [`wrk-api-gateway/worker.js:83`](worker.js#L83)
+* [`wrk-api-gateway/worker.js:94`](worker.js#L94)
+* [`wrk-api-gateway/worker.js:127`](worker.js#L127)
 
 Authentication is handled via in-memory API keys, configurable for trusted environments.
 **References:**
 
-* `wrk-api-gateway/workers/lib/auth-manager.js:9`
-* `wrk-api-gateway/workers/lib/auth-manager.js:24`
-* `wrk-api-gateway/config/common.json:9`
+* [`wrk-api-gateway/workers/lib/auth-manager.js:9`](workers/lib/auth-manager.js#L9)
+* [`wrk-api-gateway/workers/lib/auth-manager.js:24`](workers/lib/auth-manager.js#L24)
+* [`wrk-api-gateway/config/common.json:9`](config/common.json#L9)
 
 ---
 
@@ -73,10 +73,10 @@ Acts as the **bridge into the orchestration layer**, providing helper functions 
 Currently mocked but ready to swap for real RPC integration.
 **References:**
 
-* `wrk-api-gateway/workers/lib/orchestrator-client.js:7`
-* `wrk-api-gateway/workers/lib/orchestrator-client.js:31`
-* `wrk-api-gateway/workers/lib/orchestrator-client.js:72`
-* `wrk-api-gateway/workers/lib/orchestrator-client.js:113`
+* [`wrk-api-gateway/workers/lib/orchestrator-client.js:7`](workers/lib/orchestrator-client.js#L7)
+* [`wrk-api-gateway/workers/lib/orchestrator-client.js:31`](workers/lib/orchestrator-client.js#L31)
+* [`wrk-api-gateway/workers/lib/orchestrator-client.js:72`](workers/lib/orchestrator-client.js#L72)
+* [`wrk-api-gateway/workers/lib/orchestrator-client.js:113`](workers/lib/orchestrator-client.js#L113)
 
 ---
 
@@ -91,9 +91,9 @@ Centralizes authentication logic by handling:
 
 **References:**
 
-* `wrk-api-gateway/workers/lib/auth-manager.js:24`
-* `wrk-api-gateway/workers/lib/auth-manager.js:53`
-* `wrk-api-gateway/workers/lib/auth-manager.js:92`
+* [`wrk-api-gateway/workers/lib/auth-manager.js:24`](workers/lib/auth-manager.js#L24)
+* [`wrk-api-gateway/workers/lib/auth-manager.js:53`](workers/lib/auth-manager.js#L53)
+* [`wrk-api-gateway/workers/lib/auth-manager.js:92`](workers/lib/auth-manager.js#L92)
 
 ---
 
@@ -109,9 +109,9 @@ Prepares reusable HTTP middleware layers for:
 Ensures both the worker and standalone modes inherit consistent HTTP behavior.
 **References:**
 
-* `wrk-api-gateway/workers/lib/api-server.js:7`
-* `wrk-api-gateway/workers/lib/api-server.js:36`
-* `wrk-api-gateway/workers/lib/api-server.js:54`
+* [`wrk-api-gateway/workers/lib/api-server.js:7`](workers/lib/api-server.js#L7)
+* [`wrk-api-gateway/workers/lib/api-server.js:36`](workers/lib/api-server.js#L36)
+* [`wrk-api-gateway/workers/lib/api-server.js:54`](workers/lib/api-server.js#L54)
 
 ---
 
@@ -125,13 +125,13 @@ The **rack-integrated worker version**:
 
 **References:**
 
-* `wrk-api-gateway/workers/api.gateway.wrk.js:21`
-* `wrk-api-gateway/workers/api.gateway.wrk.js:68`
-* `wrk-api-gateway/workers/api.gateway.wrk.js:108`
+* [`wrk-api-gateway/workers/api.gateway.wrk.js:21`](workers/api.gateway.wrk.js#L21)
+* [`wrk-api-gateway/workers/api.gateway.wrk.js:68`](workers/api.gateway.wrk.js#L68)
+* [`wrk-api-gateway/workers/api.gateway.wrk.js:108`](workers/api.gateway.wrk.js#L108)
 
 Background cleanup, request caching placeholders, and **CORS preflight handling** mirror the standalone implementation to ensure deployment parity.
 **References:**
 
-* `wrk-api-gateway/workers/api.gateway.wrk.js:30`
-* `wrk-api-gateway/workers/api.gateway.wrk.js:225`
-* `wrk-api-gateway/workers/api.gateway.wrk.js:287`
+* [`wrk-api-gateway/workers/api.gateway.wrk.js:30`](workers/api.gateway.wrk.js#L30)
+* [`wrk-api-gateway/workers/api.gateway.wrk.js:225`](workers/api.gateway.wrk.js#L225)
+* [`wrk-api-gateway/workers/api.gateway.wrk.js:287`](workers/api.gateway.wrk.js#L287)

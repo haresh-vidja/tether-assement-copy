@@ -10,8 +10,8 @@
   * Validation hooks
   * **References:**
 
-    * `wrk-model-manager/workers/model.manager.wrk.js:21`
-    * `wrk-model-manager/workers/model.manager.wrk.js:40`
+    * [`wrk-model-manager/workers/model.manager.wrk.js:21`](workers/model.manager.wrk.js#L21)
+    * [`wrk-model-manager/workers/model.manager.wrk.js:40`](workers/model.manager.wrk.js#L40)
 
 * Can also boot as a **standalone HTTP microservice** with REST endpoints for:
 
@@ -22,9 +22,9 @@
   * Useful for lightweight environments or manual operations
   * **References:**
 
-    * `wrk-model-manager/worker.js:24`
-    * `wrk-model-manager/worker.js:51`
-    * `wrk-model-manager/worker.js:86`
+    * [`wrk-model-manager/worker.js:24`](worker.js#L24)
+    * [`wrk-model-manager/worker.js:51`](worker.js#L51)
+    * [`wrk-model-manager/worker.js:86`](worker.js#L86)
 
 ---
 
@@ -38,10 +38,10 @@
 
 **References:**
 
-* `wrk-model-manager/workers/lib/model-storage.js:17`
-* `wrk-model-manager/workers/lib/model-storage.js:45`
-* `wrk-model-manager/workers/lib/model-storage.js:124`
-* `wrk-model-manager/workers/lib/model-storage.js:156`
+* [`wrk-model-manager/workers/lib/model-storage.js:17`](workers/lib/model-storage.js#L17)
+* [`wrk-model-manager/workers/lib/model-storage.js:45`](workers/lib/model-storage.js#L45)
+* [`wrk-model-manager/workers/lib/model-storage.js:124`](workers/lib/model-storage.js#L124)
+* [`wrk-model-manager/workers/lib/model-storage.js:156`](workers/lib/model-storage.js#L156)
 
 ---
 
@@ -61,12 +61,12 @@
 
 **References:**
 
-* `wrk-model-manager/workers/lib/model-registry.js:13`
-* `wrk-model-manager/workers/lib/model-registry.js:35`
-* `wrk-model-manager/workers/lib/model-registry.js:73`
-* `wrk-model-manager/workers/lib/model-registry.js:101`
-* `wrk-model-manager/workers/lib/model-registry.js:187`
-* `wrk-model-manager/workers/lib/model-registry.js:224`
+* [`wrk-model-manager/workers/lib/model-registry.js:13`](workers/lib/model-registry.js#L13)
+* [`wrk-model-manager/workers/lib/model-registry.js:35`](workers/lib/model-registry.js#L35)
+* [`wrk-model-manager/workers/lib/model-registry.js:73`](workers/lib/model-registry.js#L73)
+* [`wrk-model-manager/workers/lib/model-registry.js:101`](workers/lib/model-registry.js#L101)
+* [`wrk-model-manager/workers/lib/model-registry.js:187`](workers/lib/model-registry.js#L187)
+* [`wrk-model-manager/workers/lib/model-registry.js:224`](workers/lib/model-registry.js#L224)
 
 ---
 
@@ -83,7 +83,7 @@
 
 **Reference:**
 
-* `wrk-model-manager/config/common.json:2`
+* [`wrk-model-manager/config/common.json:2`](config/common.json#L2)
 
 ---
 
@@ -97,14 +97,14 @@
   * Trigger housekeeping (delete, checksum validation)
 
 **References:**
-* `wrk-model-manager/workers/model.manager.wrk.js:55`
-* `wrk-model-manager/workers/model.manager.wrk.js:82`
-* `wrk-model-manager/workers/model.manager.wrk.js:144`
-* `wrk-model-manager/workers/model.manager.wrk.js:201`
-* `wrk-model-manager/workers/model.manager.wrk.js:242`
-* `wrk-model-manager/workers/model.manager.wrk.js:269`
-* `wrk-model-manager/workers/model.manager.wrk.js:292`
-* `wrk-model-manager/workers/model.manager.wrk.js:333`
+* [`wrk-model-manager/workers/model.manager.wrk.js:55`](workers/model.manager.wrk.js#L55)
+* [`wrk-model-manager/workers/model.manager.wrk.js:82`](workers/model.manager.wrk.js#L82)
+* [`wrk-model-manager/workers/model.manager.wrk.js:144`](workers/model.manager.wrk.js#L144)
+* [`wrk-model-manager/workers/model.manager.wrk.js:201`](workers/model.manager.wrk.js#L201)
+* [`wrk-model-manager/workers/model.manager.wrk.js:242`](workers/model.manager.wrk.js#L242)
+* [`wrk-model-manager/workers/model.manager.wrk.js:269`](workers/model.manager.wrk.js#L269)
+* [`wrk-model-manager/workers/model.manager.wrk.js:292`](workers/model.manager.wrk.js#L292)
+* [`wrk-model-manager/workers/model.manager.wrk.js:333`](workers/model.manager.wrk.js#L333)
 * Maintains a small **in-memory cache** of recently stored models to:
 
   * Avoid repeated lookups
@@ -113,9 +113,9 @@
 
 **References:**
 
-* `wrk-model-manager/workers/model.manager.wrk.js:27`
-* `wrk-model-manager/workers/model.manager.wrk.js:117`
-* `wrk-model-manager/workers/model.manager.wrk.js:292`
+* [`wrk-model-manager/workers/model.manager.wrk.js:27`](workers/model.manager.wrk.js#L27)
+* [`wrk-model-manager/workers/model.manager.wrk.js:117`](workers/model.manager.wrk.js#L117)
+* [`wrk-model-manager/workers/model.manager.wrk.js:292`](workers/model.manager.wrk.js#L292)
 
 ---
 
@@ -128,8 +128,8 @@
 
 **References:**
 
-* `wrk-model-manager/workers/model.manager.wrk.js:48`
-* `wrk-model-manager/workers/model.manager.wrk.js:66`
+* [`wrk-model-manager/workers/model.manager.wrk.js:48`](workers/model.manager.wrk.js#L48)
+* [`wrk-model-manager/workers/model.manager.wrk.js:66`](workers/model.manager.wrk.js#L66)
 
 ---
 
@@ -140,9 +140,9 @@
 
 **References:**
 
-* `wrk-model-manager/workers/model.manager.wrk.js:333`
-* `wrk-model-manager/workers/lib/model-storage.js:124`
-* `wrk-model-manager/config/common.json:10`
+* [`wrk-model-manager/workers/model.manager.wrk.js:333`](workers/model.manager.wrk.js#L333)
+* [`wrk-model-manager/workers/lib/model-storage.js:124`](workers/lib/model-storage.js#L124)
+* [`wrk-model-manager/config/common.json:10`](config/common.json#L10)
 
 ---
 
@@ -157,4 +157,4 @@
 
 **Reference:**
 
-* `wrk-model-manager/workers/model.manager.wrk.js:364`
+* [`wrk-model-manager/workers/model.manager.wrk.js:364`](workers/model.manager.wrk.js#L364)

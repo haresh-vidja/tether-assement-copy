@@ -12,8 +12,8 @@ Both boot paths share the same model-loading and inference logic.
 
 **References:**
 
-* `wrk-ai-inference/worker.js:12`
-* `wrk-ai-inference/workers/ai.inference.wrk.js:21`
+* [`wrk-ai-inference/worker.js:12`](worker.js#L12)
+* [`wrk-ai-inference/workers/ai.inference.wrk.js:21`](workers/ai.inference.wrk.js#L21)
 
 ---
 
@@ -31,9 +31,9 @@ Currently uses mocked storage but is structured for future integration with **Hy
 
 **References:**
 
-* `wrk-ai-inference/workers/lib/model-manager.js:13`
-* `wrk-ai-inference/workers/lib/model-manager.js:40`
-* `wrk-ai-inference/workers/lib/model-manager.js:78`
+* [`wrk-ai-inference/workers/lib/model-manager.js:13`](workers/lib/model-manager.js#L13)
+* [`wrk-ai-inference/workers/lib/model-manager.js:40`](workers/lib/model-manager.js#L40)
+* [`wrk-ai-inference/workers/lib/model-manager.js:78`](workers/lib/model-manager.js#L78)
 
 ---
 
@@ -49,10 +49,10 @@ Manages the full **inference lifecycle**, including:
 
 **References:**
 
-* `wrk-ai-inference/workers/lib/inference-engine.js:7`
-* `wrk-ai-inference/workers/lib/inference-engine.js:34`
-* `wrk-ai-inference/workers/lib/inference-engine.js:65`
-* `wrk-ai-inference/workers/lib/inference-engine.js:94`
+* [`wrk-ai-inference/workers/lib/inference-engine.js:7`](workers/lib/inference-engine.js#L7)
+* [`wrk-ai-inference/workers/lib/inference-engine.js:34`](workers/lib/inference-engine.js#L34)
+* [`wrk-ai-inference/workers/lib/inference-engine.js:65`](workers/lib/inference-engine.js#L65)
+* [`wrk-ai-inference/workers/lib/inference-engine.js:94`](workers/lib/inference-engine.js#L94)
 
 ---
 
@@ -66,10 +66,10 @@ Implements internal mechanisms to:
 
 **References:**
 
-* `wrk-ai-inference/worker.js:23`
-* `wrk-ai-inference/worker.js:69`
-* `wrk-ai-inference/workers/ai.inference.wrk.js:23`
-* `wrk-ai-inference/workers/ai.inference.wrk.js:100`
+* [`wrk-ai-inference/worker.js:23`](worker.js#L23)
+* [`wrk-ai-inference/worker.js:69`](worker.js#L69)
+* [`wrk-ai-inference/workers/ai.inference.wrk.js:23`](workers/ai.inference.wrk.js#L23)
+* [`wrk-ai-inference/workers/ai.inference.wrk.js:100`](workers/ai.inference.wrk.js#L100)
 
 ---
 
@@ -86,9 +86,9 @@ Each endpoint delegates to shared helpers, with **concurrency checks** and **ava
 
 **References:**
 
-* `wrk-ai-inference/worker.js:54`
-* `wrk-ai-inference/worker.js:86`
-* `wrk-ai-inference/worker.js:116`
+* [`wrk-ai-inference/worker.js:54`](worker.js#L54)
+* [`wrk-ai-inference/worker.js:86`](worker.js#L86)
+* [`wrk-ai-inference/worker.js:116`](worker.js#L116)
 
 **Startup and Health Monitoring:**
 
@@ -97,8 +97,8 @@ Each endpoint delegates to shared helpers, with **concurrency checks** and **ava
 
 **References:**
 
-* `wrk-ai-inference/worker.js:31`
-* `wrk-ai-inference/worker.js:188`
+* [`wrk-ai-inference/worker.js:31`](worker.js#L31)
+* [`wrk-ai-inference/worker.js:188`](worker.js#L188)
 
 ---
 
@@ -115,9 +115,9 @@ This symmetry allows the **orchestrator** to manage workers uniformly over the n
 
 **References:**
 
-* `wrk-ai-inference/workers/ai.inference.wrk.js:52`
-* `wrk-ai-inference/workers/ai.inference.wrk.js:94`
-* `wrk-ai-inference/workers/ai.inference.wrk.js:143`
+* [`wrk-ai-inference/workers/ai.inference.wrk.js:52`](workers/ai.inference.wrk.js#L52)
+* [`wrk-ai-inference/workers/ai.inference.wrk.js:94`](workers/ai.inference.wrk.js#L94)
+* [`wrk-ai-inference/workers/ai.inference.wrk.js:143`](workers/ai.inference.wrk.js#L143)
 
 Maintains:
 
@@ -129,8 +129,8 @@ These mechanisms make it easy to extend the system with richer metrics or heartb
 
 **References:**
 
-* `wrk-ai-inference/workers/ai.inference.wrk.js:24`
-* `wrk-ai-inference/workers/ai.inference.wrk.js:202`
+* [`wrk-ai-inference/workers/ai.inference.wrk.js:24`](workers/ai.inference.wrk.js#L24)
+* [`wrk-ai-inference/workers/ai.inference.wrk.js:202`](workers/ai.inference.wrk.js#L202)
 
 ---
 
@@ -148,4 +148,4 @@ These options enable flexible tuning per deployment or environment.
 
 **Reference:**
 
-* `wrk-ai-inference/config/common.json:2`
+* [`wrk-ai-inference/config/common.json:2`](config/common.json#L2)
