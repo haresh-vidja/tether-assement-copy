@@ -6,9 +6,12 @@
  */
 class ModelManager {
   /**
-   * Creates an instance of ModelManager
-   * @param {Object} conf - Configuration object
-   * @param {Object} logger - Logger instance
+   * Create a new model manager.
+   * The manager is responsible for loading models from storage, caching them,
+   * and exposing lightweight helpers for validation and discovery.
+   *
+   * @param {Object} conf - Service configuration with storage hints.
+   * @param {Object} logger - Logger instance shared across the worker.
    */
   constructor (conf, logger) {
     this.conf = conf
@@ -19,6 +22,8 @@ class ModelManager {
 
   /**
    * Initialize model manager
+   * Currently a no-op, but the hook exists to align with the lifecycle of
+   * other collaborators (e.g. for remote storage connections later on).
    * @returns {Promise<void>}
    */
   async initialize () {
@@ -26,9 +31,11 @@ class ModelManager {
   }
 
   /**
-   * Load a model from storage
-   * @param {string} modelId - Model identifier
-   * @returns {Promise<Object>} Loaded model
+   * Load a model from storage. When a model is loaded for the first time it is
+   * cached for subsequent requests to minimise disk or network round-trips.
+   *
+   * @param {string} modelId - Model identifier.
+   * @returns {Promise<Object>} Loaded model ready for inference.
    */
   async loadModel (modelId) {
     try {
@@ -42,6 +49,7 @@ class ModelManager {
       // In a real implementation, this would load from Hypercore storage
       // For now, we'll create a mock model
       const model = await this.createMockModel(modelId)
+      // Cache the model so follow-up requests can reuse the in-memory instance.
       this.modelStorage.set(modelId, model)
 
       this.logger.info(`Model loaded successfully: ${modelId}`)
@@ -54,8 +62,12 @@ class ModelManager {
 
   /**
    * Create a mock model for demonstration
-   * @param {string} modelId - Model identifier
-   * @returns {Promise<Object>} Mock model
+   * The mock simulates metadata and inference behaviour in lieu of a real model
+   * file. This allows service flows to be exercised end-to-end without the
+   * heavy storage footprint.
+   *
+   * @param {string} modelId - Model identifier.
+   * @returns {Promise<Object>} Mock model definition with a `predict` helper.
    */
   async createMockModel (modelId) {
     // This is a simplified mock implementation
@@ -86,9 +98,10 @@ class ModelManager {
   }
 
   /**
-   * Unload a model from memory
-   * @param {string} modelId - Model identifier
-   * @returns {Promise<boolean>} Success status
+   * Unload a model from memory so resources can be reclaimed.
+   *
+   * @param {string} modelId - Model identifier.
+   * @returns {Promise<boolean>} Success status (`true` if a model was evicted).
    */
   async unloadModel (modelId) {
     try {
@@ -106,8 +119,11 @@ class ModelManager {
 
   /**
    * Get model metadata
-   * @param {string} modelId - Model identifier
-   * @returns {Object} Model metadata
+   * Metadata includes the shape and framework, which downstream components can
+   * use to perform validation or pre-processing selection.
+   *
+   * @param {string} modelId - Model identifier.
+   * @returns {Object|null} Model metadata if the model is cached.
    */
   getModelMetadata (modelId) {
     const model = this.modelStorage.get(modelId)
@@ -116,7 +132,10 @@ class ModelManager {
 
   /**
    * List all loaded models
-   * @returns {Array<string>} List of loaded model IDs
+   * With remote storage, this would differentiate between cached vs remote
+   * availability.
+   *
+   * @returns {Array<string>} List of loaded model IDs.
    */
   getLoadedModels () {
     return Array.from(this.modelStorage.keys())
@@ -124,9 +143,11 @@ class ModelManager {
 
   /**
    * Validate model input
-   * @param {Object} model - Model object
-   * @param {Object} input - Input data
-   * @returns {boolean} Validation result
+   * Stub method that can later be extended with shape and type verification.
+   *
+   * @param {Object} model - Model object.
+   * @param {Object} input - Input data.
+   * @returns {boolean} Validation result.
    */
   validateInput (model, input) {
     // Basic validation - in real implementation would check shapes, types, etc.

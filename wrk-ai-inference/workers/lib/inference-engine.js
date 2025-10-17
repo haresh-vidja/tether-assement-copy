@@ -6,9 +6,12 @@
  */
 class InferenceEngine {
   /**
-   * Creates an instance of InferenceEngine
-   * @param {Object} conf - Configuration object
-   * @param {Object} logger - Logger instance
+   * Create a new inference engine wrapper. The engine handles the execution
+   * pipeline (validate -> preprocess -> execute -> postprocess) and records
+   * every inference for later metrics.
+   *
+   * @param {Object} conf - Configuration object with runtime hints.
+   * @param {Object} logger - Logger instance for traceability.
    */
   constructor (conf, logger) {
     this.conf = conf
@@ -18,6 +21,7 @@ class InferenceEngine {
 
   /**
    * Initialize inference engine
+   * Reserved for future hooks (e.g. warmup kernels, connect to runtimes).
    * @returns {Promise<void>}
    */
   async initialize () {
@@ -25,11 +29,14 @@ class InferenceEngine {
   }
 
   /**
-   * Run inference on a model
-   * @param {Object} model - Model object
-   * @param {Object} inputData - Input data
-   * @param {Object} options - Inference options
-   * @returns {Promise<Object>} Inference result
+   * Run inference on a model. The method coordinates the full lifecycle of an
+   * inference call, applying preprocessing, enforcing timeouts, and capturing
+   * telemetry in `inferenceHistory`.
+   *
+   * @param {Object} model - Model object returned by the model manager.
+   * @param {Object} inputData - Input data supplied by the client.
+   * @param {Object} options - Inference options (`timeout`, tuning parameters).
+   * @returns {Promise<Object>} Inference result envelope.
    */
   async runInference (model, inputData, options = {}) {
     const startTime = Date.now()
@@ -91,10 +98,14 @@ class InferenceEngine {
 
   /**
    * Execute the actual inference
-   * @param {Object} model - Model object
-   * @param {Object} input - Processed input
-   * @param {Object} options - Options
-   * @returns {Promise<Object>} Raw inference result
+   * Uses a timeout guard to prevent a single long-running inference from
+   * blocking the worker indefinitely. Execution is delegated to the model's
+   * `predict` helper which acts as the bridge to the underlying runtime.
+   *
+   * @param {Object} model - Model object.
+   * @param {Object} input - Processed input payload.
+   * @param {Object} options - Options (includes optional `timeout` override).
+   * @returns {Promise<Object>} Raw inference result before post-processing.
    */
   async executeInference (model, input, options) {
     // Add timeout
@@ -132,9 +143,12 @@ class InferenceEngine {
 
   /**
    * Postprocess inference result
-   * @param {Object} result - Raw inference result
-   * @param {Object} model - Model object
-   * @returns {Promise<Object>} Processed result
+   * Applies a thin abstraction so downstream consumers receive consistent
+   * metadata (including model version and processing timestamp).
+   *
+   * @param {Object} result - Raw inference result returned by the runtime.
+   * @param {Object} model - Model object used during execution.
+   * @returns {Promise<Object>} Processed result that mirrors API contracts.
    */
   async postprocessResult (result, model) {
     // Basic postprocessing - in real implementation would handle:
@@ -155,9 +169,12 @@ class InferenceEngine {
 
   /**
    * Validate input data
-   * @param {Object} model - Model object
-   * @param {Object} input - Input data
-   * @returns {boolean} Validation result
+   * Placeholder for richer schema validation. The guard prevents null/undefined
+   * values from reaching the runtime, which simplifies error handling upstream.
+   *
+   * @param {Object} model - Model object.
+   * @param {Object} input - Input data.
+   * @returns {boolean} Validation result.
    */
   validateInput (model, input) {
     // Basic validation

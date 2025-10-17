@@ -200,7 +200,7 @@ class AuthManager {
   /**
    * Get authentication statistics
    * @returns {Promise<Object>} Auth statistics
-   */
+   */randomBytes
   async getStats () {
     try {
       const totalKeys = this.apiKeys.size
